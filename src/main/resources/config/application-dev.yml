@@ -45,8 +45,8 @@ spring:
                     destination: topic-jhipster
     data:
         mongodb:
-            uri: mongodb://localhost:27017
-            database: jhipsterSampleApplication
+            uri: mongodb://admin:Iaqu9102Ya@68.183.129.19
+            database: haraj
         elasticsearch:
             properties:
                 path:
