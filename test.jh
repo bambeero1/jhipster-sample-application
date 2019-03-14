@@ -1,0 +1,54 @@
+entity City {
+	city String
+}
+
+entity Tags {
+	tags String required
+}
+
+entity Ad {
+	title String,
+	description String,
+    Tags{tags} Array,
+    city String,
+    phone String
+}
+
+
+entity User {
+	/**
+	* The firstname attribute.
+	*/
+	phone String,
+	password String
+}
+
+relationship ManyToOne {
+	Ad to City{city}
+    Ad to User
+}
+relationship OneToOne {
+	City{city} to Ad
+}
+
+
+relationship ManyToMany {
+	Tags{tags} to Ad
+}
+
+
+
+// defining multiple oneToOne relationships
+
+// Set pagination options
+paginate Tags, City, Ad with pagination
+
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
